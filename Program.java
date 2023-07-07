@@ -48,34 +48,12 @@ public class Program {
                 return false;
         return true;
     }
-    public static void olaMamash(int num) {
-        Random rand = new Random();
-        boolean flag = false;
-        boolean bigflag = false;
-        int[] arr = new int[num];
-        while (!bigflag) {
-            flag = false;
-            for (int i = 0; i < arr.length; i++) {
-                arr[i] = rand.nextInt(90) + 10;
-            }
-
-
-            if (isSorted(arr)) {
-
-                for (int j : arr) {
-                    System.out.println(j);
-                }
-                bigflag = !bigflag ;
-            }
-
-        }
-
-    }
+   
 
     public static void main(String[] args) {
         OlaThread[] olaThreads = new OlaThread[16];
         for (int i = 0; i < olaThreads.length; i++) {
-            olaThreads[i] = new OlaThread(11);
+            olaThreads[i] = new OlaThread(11); // Length of a wanted sorted array - 11 Should be enough to show decent differences. 15 can be too much for a desktop i9 (Yeah..)
         }
         for (int i = 0; i < olaThreads.length; i++) {
             System.out.println("In thread "+i);
